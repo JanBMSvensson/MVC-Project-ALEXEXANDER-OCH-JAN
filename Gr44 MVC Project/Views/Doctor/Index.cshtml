@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Doctor";
+}
+<h1>Doctor Input</h1>
+<form method="get" asp-controller="Doctor" asp-action="Diagnose">
+    <input name="temperature" type="number" />
+    <select name="TempScale">
+        <option>Celsius</option> 
+        <option selected>Fahrenheit</option>
+        <option>Kelvin</option>
+    </select>
+    <input type="checkbox" name="lingon" checked/>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+</form>

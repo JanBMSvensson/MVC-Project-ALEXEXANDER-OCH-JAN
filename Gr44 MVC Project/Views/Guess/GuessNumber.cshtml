@@ -1,0 +1,36 @@
+﻿@model (int? secret, int guess)
+
+@{
+    ViewBag.title = "GissaförfANAAN";
+}
+<h1>Guess the number</h1>
+<form method="post" asp-controller="Guess" asp-action="GuessNumber">
+
+    @{if(Model.secret.HasValue){
+            if(Model.secret.Value > Model.guess)
+            {
+                            <div> Your guess of @Model.guess was too low!</div>
+            }
+            else if(Model.secret.Value < Model.guess)
+            {
+                            <div> Your guess of @Model.guess was too high!</div>
+            }
+            else
+            {
+                            <div>Your guess of @Model.guess is equal to the secret number @Model.secret.Value</div>
+            }
+
+
+    } else {
+            
+                   <div>GISSAA NÅTT</div>
+       
+
+    }
+    }
+
+    <input name="bestGuess" type="number" />
+    <button type="submit">Submit</button>
+    <button type="button" onclick="window.location.href='https://www.google.com'">Dont click me</button>
+
+</form>

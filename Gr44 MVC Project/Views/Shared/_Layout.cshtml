@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Hello Header</h1>
+        <dl>
+            
+            <dd>
+                <a asp-controller="Home" asp-action="Index">Home</a>
+            </dd>
+            <dd>
+                <a asp-controller="Home" asp-action="Contact">Contact</a>
+            </dd>
+            <dd>
+                <a asp-controller="Home" asp-action="Projects">Projects</a>
+            </dd>
+            <dd>
+                <a asp-controller="Doctor" asp-action="Index">Doctor</a>
+            </dd>
+            <dd>
+                <a asp-controller="Guess" asp-action="GuessNumber">Guess</a>
+            </dd>
+        </dl>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>Foot @DateTime.Now.Year</footer>
+</body>
+</html>
